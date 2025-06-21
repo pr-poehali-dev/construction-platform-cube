@@ -4,13 +4,15 @@
 
 @layer base {
   :root {
-    /* Construction platform theme colors */
-    --construction-green: 27 69% 20%;
-    --construction-green-light: 140 40% 25%;
+    /* Construction platform investment theme */
+    --construction-blue: 217 91% 60%;
+    --construction-blue-light: 217 91% 70%;
+    --construction-blue-dark: 217 91% 45%;
     --construction-graphite: 220 13% 18%;
-    --construction-graphite-light: 220 13% 25%;
-    --construction-gold: 43 96% 56%;
-    --construction-gold-light: 48 100% 67%;
+    --construction-graphite-light: 220 13% 35%;
+    --construction-graphite-dark: 220 13% 12%;
+    --construction-accent: 43 96% 56%;
+    --construction-accent-light: 48 100% 67%;
 
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -21,7 +23,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: var(--construction-green);
+    --primary: var(--construction-blue);
     --primary-foreground: 0 0% 98%;
 
     --secondary: var(--construction-graphite);
@@ -30,7 +32,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: var(--construction-gold);
+    --accent: var(--construction-accent);
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,9 +40,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: var(--construction-green);
+    --ring: var(--construction-blue);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -102,8 +104,24 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+@layer components {
+  .investment-gradient {
+    @apply bg-gradient-to-br from-construction-blue via-construction-blue-light to-construction-graphite;
+  }
+
+  .pitch-section {
+    @apply py-20 px-6;
+  }
+
+  .pitch-heading {
+    @apply text-4xl md:text-5xl font-bold text-construction-graphite mb-8;
   }
 }

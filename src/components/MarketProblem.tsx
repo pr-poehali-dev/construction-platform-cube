@@ -2,86 +2,69 @@ import Icon from "@/components/ui/icon";
 
 const MarketProblem = () => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-construction-graphite mb-12 text-center">
-            Проблема рынка
-          </h2>
+    <section className="pitch-section bg-gray-50">
+      <div className="container mx-auto max-w-5xl">
+        <h2 className="pitch-heading text-center">Проблема рынка</h2>
 
-          <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-8 rounded-2xl mb-12 shadow-2xl">
-            <div className="flex items-start gap-4">
-              <Icon
-                name="AlertTriangle"
-                size={48}
-                className="flex-shrink-0 mt-1"
-              />
-              <p className="text-xl leading-relaxed">
-                Сегодня рынок строительства в России{" "}
-                <strong>разрозненный, непрозрачный</strong> и перегружен
-                мошенниками и некомпетентными исполнителями.
-                <strong>"Куб" решает эту проблему.</strong>
+        <div className="bg-gradient-to-r from-red-500 to-red-600 text-white p-10 rounded-3xl mb-16 shadow-2xl">
+          <div className="flex items-center gap-6">
+            <Icon name="AlertTriangle" size={64} className="flex-shrink-0" />
+            <div>
+              <p className="text-2xl leading-relaxed font-medium">
+                На рынке нет единой платформы для надёжного выбора строительных
+                бригад, закупки материалов и логистики в одном месте
               </p>
             </div>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <Icon
-                name="Users"
-                className="mx-auto mb-4 text-red-500"
-                size={40}
-              />
-              <h3 className="font-bold text-lg mb-2 text-construction-graphite">
-                Недоверие
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: "UserX",
+              title: "Недоверие",
+              desc: "Клиенты не знают, кому можно доверить строительство",
+              stat: "70%",
+            },
+            {
+              icon: "DollarSign",
+              title: "Переплаты",
+              desc: "Отсутствие прозрачного ценообразования",
+              stat: "+40%",
+            },
+            {
+              icon: "Clock",
+              title: "Задержки",
+              desc: "Срывы сроков из-за плохой логистики",
+              stat: "60%",
+            },
+            {
+              icon: "AlertCircle",
+              title: "Мошенники",
+              desc: "Высокий уровень недобросовестных исполнителей",
+              stat: "30%",
+            },
+          ].map((problem) => (
+            <div
+              key={problem.title}
+              className="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl transition-all duration-300"
+            >
+              <div className="bg-red-50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Icon
+                  name={problem.icon as any}
+                  className="text-red-500"
+                  size={40}
+                />
+              </div>
+              <div className="text-3xl font-bold text-red-500 mb-3">
+                {problem.stat}
+              </div>
+              <h3 className="font-bold text-xl mb-3 text-construction-graphite">
+                {problem.title}
               </h3>
-              <p className="text-sm text-gray-600">
-                Клиенты не знают, кому можно доверить строительство
-              </p>
+              <p className="text-gray-600 leading-relaxed">{problem.desc}</p>
             </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <Icon
-                name="DollarSign"
-                className="mx-auto mb-4 text-red-500"
-                size={40}
-              />
-              <h3 className="font-bold text-lg mb-2 text-construction-graphite">
-                Переплаты
-              </h3>
-              <p className="text-sm text-gray-600">
-                Отсутствие прозрачного ценообразования
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <Icon
-                name="Clock"
-                className="mx-auto mb-4 text-red-500"
-                size={40}
-              />
-              <h3 className="font-bold text-lg mb-2 text-construction-graphite">
-                Задержки
-              </h3>
-              <p className="text-sm text-gray-600">
-                Срывы сроков из-за плохой логистики
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-              <Icon
-                name="AlertCircle"
-                className="mx-auto mb-4 text-red-500"
-                size={40}
-              />
-              <h3 className="font-bold text-lg mb-2 text-construction-graphite">
-                Мошенники
-              </h3>
-              <p className="text-sm text-gray-600">
-                Высокий уровень недобросовестных исполнителей
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -20,17 +20,19 @@ export default {
     extend: {
       colors: {
         construction: {
-          green: {
-            DEFAULT: "hsl(var(--construction-green))",
-            light: "hsl(var(--construction-green-light))",
+          blue: {
+            DEFAULT: "hsl(var(--construction-blue))",
+            light: "hsl(var(--construction-blue-light))",
+            dark: "hsl(var(--construction-blue-dark))",
           },
           graphite: {
             DEFAULT: "hsl(var(--construction-graphite))",
             light: "hsl(var(--construction-graphite-light))",
+            dark: "hsl(var(--construction-graphite-dark))",
           },
-          gold: {
-            DEFAULT: "hsl(var(--construction-gold))",
-            light: "hsl(var(--construction-gold-light))",
+          accent: {
+            DEFAULT: "hsl(var(--construction-accent))",
+            light: "hsl(var(--construction-accent-light))",
           },
         },
         border: "hsl(var(--border))",
